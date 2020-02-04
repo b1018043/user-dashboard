@@ -6,21 +6,24 @@ const UserEdit=()=>{
     const [name,setName]=useState("");
     const [password,setPassword]=useState("");
     const [email,setEmail]=useState("");
+
     const {id}=useParams();
     const history=useHistory();
+
     useEffect(()=>{
         if(!id){
             alert("idが存在していません");
             history.push("/");
         }
     },[])
+
     const stateHandler = (handler)=>(e)=>{
         handler(e.target.value);
     }
+
     const submit=(e)=>{
         e.preventDefault();
         if (!(name || password || email)) return;
-        console.log("called!!")
         let data={};
         if(name.trim()) data["name"]=name;
         if(password.trim()) data["password"]=password;
@@ -32,10 +35,10 @@ const UserEdit=()=>{
             },
             body: JSON.stringify(data),
         }).then(res=>{
-            console.log(res);
             history.push("/");
         }).catch(err=>console.error(err));
     }
+    
     return (
         <>
             <div>
