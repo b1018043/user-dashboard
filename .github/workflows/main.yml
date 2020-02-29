@@ -10,4 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run npm test
-      run: cd user-dashboard-client && npm install && npm test
+    - run: cd user-dashboard-client
+    - run: npm install
+    - run: npm test 
