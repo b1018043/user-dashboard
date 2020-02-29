@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: run npm init
       run: |
-        ls
         cd user-dashboard-client,
         npm install
     - name: run test
