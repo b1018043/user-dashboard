@@ -1,0 +1,17 @@
+name: run test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: run npm init
+      run: |
+        cd user-dashboard-client,
+        npm install
+    - name: run test
+      run: npm test
