@@ -17,8 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd user-dashboard-client
-    - run: npm install
-    - run: npm test
+    - run: cd user-dashboard-client && npm install
+    - run: cd user-dashboard-client && npm test
       env:
         CI: true
